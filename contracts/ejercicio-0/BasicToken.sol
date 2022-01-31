@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import "hardhat/console.sol";
+
 contract Mintable {
     address public minter;
 
@@ -44,5 +46,9 @@ contract BasicToken is Mintable {
     // Función para crear tokens. Sólo llamable por una cuenta con privilegios.
     function mint(address to, uint256 amount) external onlyMinter {
         balances[to] += amount;
+        totalSupply += amount;
+        console.log(balances[msg.sender]);
+        console.log(balances[to]);
+        console.log(totalSupply);
     }
 }

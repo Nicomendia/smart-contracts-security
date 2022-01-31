@@ -1,3 +1,28 @@
+# Introduction to Hacking and Security in Smart Contracts
+
+Repository of the course (in Spanish) "Introducción a Hacking y Seguridad en Smart Contracts", given on August 17th and 20th, 2021 by @tinchoabbate for the Computer Society ITBA. Available on [Youtube](https://www.youtube.com/watch?v=sqjHodAj5Xc).
+
+Tests and contracts have been updated according to the excercises proposed by the author in the video.
+
+## Install
+
+First of all, you must have installed [NodeJS](https://nodejs.org/en/). Then:
+
+1. Download this repository.
+2. In the root directory, execute the `npm install` command in order to install the required dependencies.
+
+## Use
+
+Once dependencies are installed, you can execute each test file (located in the `test` folder) with the command
+
+> $ npx hardhat test test/path/to/file.js
+
+
+
+
+Description in Spanish by the author:
+
+
 # Introducción a Hacking y Seguridad en Smart Contracts
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)

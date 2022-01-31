@@ -24,7 +24,6 @@ contract VaultV2 is Ownable {
     // Esta es una función nativa de Solidity (https://docs.soliditylang.org/en/v0.8.7/units-and-global-variables.html#members-of-address-types)
     // NO confundir con función `transfer` de la especificación ERC20 (https://eips.ethereum.org/EIPS/eip-20#transfer)
     payable(msg.sender).transfer(amountDeposited);
-    
     deposits[msg.sender] = 0;
   }
 }

